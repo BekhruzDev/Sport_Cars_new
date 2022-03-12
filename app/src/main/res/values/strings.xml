@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sport Cars</string>
+<string name="bugatti_divo">Bugatti Divo</string>
+<string name="lamborghini_aventador">Lamborghini Aventador</string>
+<string name="mc_laren_p1">Mc Laren P1</string>
+<string name="ferrari_458_spider">Ferrari 458 Spider</string>
+<string name="dodge_viper_acr">Dodge Viper Acr</string>
+<string name="mustang_shelby_gt350">Mustang Shelby GT350</string>
+<string name="dodge_challenger_srt_hellcat">Dodge Challenger Srt Hellcat</string>
+<string name="chevrolet_camaro_zl1_1le">Chevrolet Camaro ZL1 1LE</string>
+    <string name="menu_name">action_layout_switch</string>
+</resources>
