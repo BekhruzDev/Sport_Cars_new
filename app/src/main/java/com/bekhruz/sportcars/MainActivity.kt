@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private fun setIcon(menuItem:MenuItem){
         menuItem.icon = when(isLinearLayoutManager){
             true -> ContextCompat.getDrawable(this, R.drawable.ic_view_grid)
