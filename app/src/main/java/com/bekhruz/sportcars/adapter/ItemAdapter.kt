@@ -9,14 +9,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bekhruz.sportcars.R
-import com.bekhruz.sportcars.model.data.Datasource
+import com.bekhruz.sportcars.model.Car
 
 class ItemAdapter(
     private val context: Context,
-    private val layoutType: Int
+    private val layoutType: Int,
+    private val dataSet: List<Car>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    private val dataSet = Datasource.carList
     private fun chooseAdapterLayout() = when (layoutType) {
         1 -> R.layout.grid_list_item
         else -> R.layout.linear_list_item
@@ -35,7 +35,7 @@ class ItemAdapter(
         return ItemViewHolder(adapterLayout)
     }
 
-    override fun onBindViewHolder(holder: ItemAdapter.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.view.animation = AnimationUtils.loadAnimation(
             holder.view.context,
             R.anim.recyclerview_anim)
@@ -44,6 +44,5 @@ class ItemAdapter(
         holder.carImage.setImageResource(item.imageResourceId)
         holder.carName.text = resources.getString(item.stringResourceId)
     }
-
     override fun getItemCount(): Int = dataSet.size
 }

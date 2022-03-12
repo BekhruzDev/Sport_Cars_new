@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bekhruz.sportcars.adapter.ItemAdapter
 import com.bekhruz.sportcars.databinding.ActivityMainBinding
 import com.bekhruz.sportcars.layouttype.LayoutType
+import com.bekhruz.sportcars.model.data.Datasource
 
 class MainActivity : AppCompatActivity() {
     private var isLinearLayoutManager = true
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        recyclerView = binding.recyclerviewLinear
+        recyclerView = binding.recyclerview
         recyclerView.hasFixedSize()
         chooseLayout()
     }
@@ -28,12 +29,11 @@ class MainActivity : AppCompatActivity() {
     private fun chooseLayout() {
         if(isLinearLayoutManager){
             recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = ItemAdapter(this, LayoutType.LINEAR)
+            recyclerView.adapter = ItemAdapter(this, LayoutType.LINEAR,Datasource.carList)
         }else {
             recyclerView.layoutManager = GridLayoutManager(this, 2)
-            recyclerView.adapter = ItemAdapter(this, LayoutType.GRID)
+            recyclerView.adapter = ItemAdapter(this, LayoutType.GRID, Datasource.carList)
         }
-
     }
 
     private fun setIcon(menuItem:MenuItem){
